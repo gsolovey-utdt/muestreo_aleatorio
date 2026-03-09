@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muestreo Aleatorio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-container">
+    <header class="header-section">
+      <h1>Muestreo Aleatorio</h1>
+      <p>
+        Creado por Elena Llaudet, coautora de
+        <a href="https://bit.ly/dss_textbook" target="_blank" rel="noopener noreferrer">Data Analysis for Social Science</a>
+        y adaptado por Guillermo Solovey.
+      </p>
+    </header>
+
+    <section class="content-section">
+      <div class="info-box">
+        El muestreo aleatorio crea una muestra representativa de la población objetivo cuando el tamaño muestral es lo suficientemente grande.
+      </div>
+
+      <p class="intro-text">
+        Supongamos una población de 1000 individuos en la que el 20% es naranja, 10% es azul, 20% es rosa, 30% es verde y 20% es violeta. Al seleccionar una muestra aleatoria, las proporciones de la muestra se parecen cada vez más a las de la población a medida que aumenta <em>n</em>. Veamos cómo funciona esto con mayor detenimiento.
+      </p>
+
+      <ol class="step-list">
+        <li>
+          Con <strong>n = 20</strong>, la muestra puede no representar bien a la población (por ejemplo, puede incluir muy pocos azules).
+        </li>
+        <li>
+          Mové el control para aumentar <strong>n</strong> y observá cómo la composición de la muestra empieza a parecerse a la población.
+        </li>
+        <li>
+          Cerca de <strong>n = 300</strong>, la muestra suele aproximar las proporciones poblacionales, haciendo que la muestra sea representativa.
+        </li>
+      </ol>
+
+      <section class="layout-row">
+        <aside class="controls-panel">
+          <label for="sample-size">Tamaño de muestra <em>n</em>:</label>
+          <p>
+            Mové el control para ver cómo cambia la representatividad de la muestra.
+          </p>
+          <input type="range" id="sample-size" min="20" max="300" step="10" value="20">
+          <div class="slider-value">
+            Valor actual: <span id="sample-size-value">20</span>
+          </div>
+          <button id="resample-btn" type="button">Generar nueva muestra</button>
+        </aside>
+
+        <section class="chart-panel">
+          <div class="chart-item">
+            <h2>Población</h2>
+            <p id="population-n">N = 1000</p>
+            <div class="canvas-wrap">
+              <canvas id="population-chart"></canvas>
+            </div>
+          </div>
+          <div class="chart-item">
+            <h2>Muestra</h2>
+            <p id="sample-n">n = 20</p>
+            <div class="canvas-wrap">
+              <canvas id="sample-chart"></canvas>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <footer class="notes-section">
+        <strong>Nota:</strong> <em>N</em> es el tamaño total de la población y <em>n</em> es el tamaño de la muestra.
+        Los números sobre cada barra muestran el conteo de individuos por tipo.
+      </footer>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
